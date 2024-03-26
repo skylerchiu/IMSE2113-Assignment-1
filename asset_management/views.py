@@ -8,12 +8,13 @@ from django.shortcuts import redirect
 from asset_management.forms import LogMessageForm
 from asset_management.models import LogMessage
 
-from asset_management.forms import AddAssetForm, AddUserForm
-from asset_management.models import Asset, User
+from asset_management.forms import AddAssetForm
+from asset_management.models import Asset
 
 from django.views.generic import ListView, UpdateView
 
 from random import randint
+
 
 class HomeListView(ListView):
     """Renders the home page, with a list of all messages."""
@@ -41,12 +42,6 @@ class AssetUpdateView(UpdateView):
     
     def get_absolute_url(self):
         return ""
-    
-class UserListView(ListView):
-    model = User
-    def get_context_data(self, **kwargs):
-        context = super(UserListView, self).get_context_data(**kwargs)
-        return context
     
 def hello_there(request, name):
     return render(
@@ -83,13 +78,4 @@ def add_asset(request):
         return render(request, "asset_management/add-asset.html", {"form": form})
     
 
-def add_user(request):
-    form = AddUserForm(request.POST or None)
-    if request.method == "POST":
-        if form.is_valid():
-            message = form.save(commit=False)
-            message.save()
-        return redirect("users")
-    else:
-        return render(request, "asset_management/add-asset.html", {"form": form})
     

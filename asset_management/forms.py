@@ -1,7 +1,7 @@
 # hello.forms.py
 from django import forms
 from asset_management.models import LogMessage
-from asset_management.models import Asset, User
+from asset_management.models import Asset
 class LogMessageForm(forms.ModelForm):
     class Meta:
         model = LogMessage
@@ -12,8 +12,3 @@ class AddAssetForm(forms.ModelForm):
     class Meta:
         model = Asset
         fields = ("name", "description")
-
-class AddUserForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ("username", "email")

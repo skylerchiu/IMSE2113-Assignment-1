@@ -11,3 +11,7 @@ run `python manage.py runserver`
 run `python manage.py makemigrations`
 run `python manage.py migrate`
 
+# Resources:
+
+https://docs.djangoproject.com/en/5.0/topics/auth/default/#module-django.contrib.auth.views
+https://realpython.com/customize-django-admin-python/#setting-up-the-django-admin 
