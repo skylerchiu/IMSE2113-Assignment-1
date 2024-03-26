@@ -1,0 +1,10 @@
+{% extends 'asset_management/layout.html' %}
+
+{% block content %}
+    <h1>Edit Product</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Changes</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "asset_management/layout.html" %}
+{% block title %}
+    Users
+{% endblock %}
+{% block content %}
+    <h2>Users</h2>
+    {% if message_list %}
+        <table class="message_list">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for message in message_list %}
+                    <tr>
+                        <td>{{ message.username }}</td>
+                        <td>{{ message.email }}</td>
+                        <td><a href="{% url 'asset-update' pk=message.id %}">View/Edit</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No users have been registed. Use the <a href="{% url 'log' %}">Log Message form</a>.</p>
+ {% endif %}
+    
+{% endblock %}
