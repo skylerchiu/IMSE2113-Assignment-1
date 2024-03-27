@@ -2,7 +2,8 @@
 # How to run locally:
 ## Zipped folder: 
 1. Extract all the contents from the zipped folder
-2. Run `python manage.py runserver`
+2. Ensure an interpreter with Django is selected.
+3. Run `python manage.py runserver`
 
 
 ## From git:
