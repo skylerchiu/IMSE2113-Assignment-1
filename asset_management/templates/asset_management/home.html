@@ -3,9 +3,9 @@
     Home
 {% endblock %}
 {% block content %}
-    Hi {{ user.username }}!
     <h2 class = "home-header">Your Assets</h2>
     {% if message_list %}
+    <div class = "table-container">
         <table class="message_list">
             <thead>
                 <tr>
@@ -27,8 +27,9 @@
                 {% endfor %}
             </tbody>
         </table>
+    </div>
     {% else %}
-        <p>No assets have been assigned. Please contact your administrator</a>.</p>
+        <p class = "no-asset-message">No assets have been assigned to you. Please contact your administrator</a>.</p>
  {% endif %}
     
 {% endblock %}

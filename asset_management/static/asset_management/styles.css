@@ -1,14 +1,47 @@
-input[name=message] {
-    width: 80%;
+body {
+  margin:0;
+  height: 100%
+}
+
+.content-container{
+  min-height: 75vh;
 }
 
 .home-header {
-    color: red
+    color: red;
+    text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 3vh 5vh 3vh 5vh;
+  background-color: #6dbc2f;
+}
+
+.navbar-brand {
+  font-size: 4vh;
+  color: white;
+  padding-right: 4vh
+}
+
+#user-icon{
+  font-size: 3vh;
+}
+
+i.fa {
+  display: inline-block;
+  border-radius: 60px;
+  box-shadow: 0 0 2px #888;
+  padding: 1.2vh 1.5vh;
+  background-color: white;
+
 }
 
 .dropdown {
     display: inline-block;
     position: relative;
+    align-self: flex-start;
   }
   
   
@@ -19,11 +52,15 @@ input[name=message] {
     background-color:#fff;
     border-radius:5px;
     box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+    width: 25vh;
+    right: 0;
+  
   }
   
   .dropdown:hover .dropdown-options {
     display: block;
   }
+  
   
   .dropdown-options a {
     display: block;
@@ -38,3 +75,51 @@ input[name=message] {
     background-color: #ddd;
     border-radius:5px;
   }
+
+  .dropdown-username{
+    text-align: center;
+  }
+  .logout-button{
+    color: #000000;
+    padding: 5px;
+    text-decoration: none;
+    padding:20px 40px;
+    border:none;
+    background-color: white;
+    width:100%;
+    font-weight: 700;
+  }
+  .logout-button:hover{
+    color: #0a0a23;
+    background-color: #ddd;
+    border-radius:5px;
+    cursor: pointer;
+  }
+
+  .logout-form{
+    width: 100% !important;
+  }
+
+.table-container{
+  display: flex;
+  justify-content: center;
+}
+.message_list {
+  width: 80%;
+}
+
+tr:nth-child(even) {
+  background-color: #efefef;
+}
+
+td {
+  width: 5vh
+}
+
+.no-asset-message{
+  text-align: center;
+}
+
+.footer{
+  text-align: center;
+}

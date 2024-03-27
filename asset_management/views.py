@@ -14,6 +14,8 @@ from asset_management.models import Asset
 from django.views.generic import ListView, UpdateView
 
 from random import randint
+from django.contrib.auth.models import User
+from django.contrib.auth.views import PasswordChangeView
 
     
 class AssetListView(ListView):
@@ -26,7 +28,7 @@ class AssetUpdateView(UpdateView):
     model = Asset
     fields = '__all__'  # Specify the fields you want to update
     template_name = 'asset_management/view-edit-asset.html'  # Template for updating
-    success_url = '/'  # Redirect URL after successful update
+    success_url = '/home'  # Redirect URL after successful update
 
 
     def get_object(self, queryset=None):
@@ -72,4 +74,22 @@ def add_asset(request):
         return render(request, "asset_management/add-asset.html", {"form": form})
     
 
+class ChangePasswordView(PasswordChangeView):
+    template_name = 'registration/password_change.html'
+    success_url = '/'
+
+
+class ProfileEditView(UpdateView):
+    model = User
+    fields = ('username', 'first_name', 'last_name', 'email')  # Specify the fields you want to update
+    template_name = 'asset_management/edit-profile.html'  # Template for updating
+    success_url = '/home'  # Redirect URL after successful update
+
+
+    def get_object(self, queryset=None):
+        # Fetch the product based on the pk from the URL
+        return super().get_queryset().filter(username=self.request.user).first()
+    
+    def get_absolute_url(self):
+        return ""
     

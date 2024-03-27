@@ -1,0 +1,62 @@
+{% extends 'asset_management/layout.html' %}
+
+{% block content %}
+    <h1>Edit Profile</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="submit-button">Save Changes</button>
+    </form>
+
+<style>
+
+    body{
+      background-color: white
+    }
+  
+    form{
+      width: 30% !important;
+    }
+  
+    h1{
+      text-align: center;
+      padding-top: 5vh;
+      padding-bottom: 4vh
+    }
+  
+    h2 {
+      text-align: center
+    }
+  
+    form {
+      width: 300px;
+      margin: 0 auto;
+    }
+    
+    form input[type="text"], form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      box-sizing: border-box;
+    }
+    
+    .submit-button {
+      background-color: #6dbc2f;
+      color: white;
+      padding: 10px 20px;
+      margin: 10px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    .submit-button {
+      opacity: 0.8;
+    }
+  
+    p{
+      text-align: center;
+    }
+</style>
+
+{% endblock %}
