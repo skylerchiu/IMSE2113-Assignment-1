@@ -1,15 +1,17 @@
-# hello.forms.py
 from django import forms
-from asset_management.models import LogMessage
 from asset_management.models import Asset
 from django.contrib.auth.models import User
-class LogMessageForm(forms.ModelForm):
+
+class UserAdminForm(forms.ModelForm):
+    first_name = forms.CharField(required=True)
+    last_name = forms.CharField(required=True)
+    email = forms.EmailField(required=True)
+
     class Meta:
-        model = LogMessage
-        fields = ("message",) # NOTE: the trailing comma is required
+        model = User
+        fields = '__all__'
 
-
-class AddAssetForm(forms.ModelForm):
+class AssetAdminForm(forms.ModelForm):
     class Meta:
         model = Asset
-        fields = ("name", "description")
+        fields = ("name", "description", 'registered_user')

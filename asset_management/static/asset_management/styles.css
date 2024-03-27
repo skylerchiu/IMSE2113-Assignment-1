@@ -34,7 +34,6 @@ i.fa {
   border-radius: 60px;
   padding: 1.2vh 1.5vh;
   background-color: white;
-
 }
 
 .dropdown {
@@ -43,66 +42,67 @@ i.fa {
     align-self: flex-start;
   }
   
-  
-  .dropdown-options {
-    display: none;
-    position: absolute;
-    overflow: auto;
-    background-color:#fff;
-    border-radius:5px;
-    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
-    width: 25vh;
-    right: 0;
-  
-  }
-  
-  .dropdown:hover .dropdown-options {
-    display: block;
-  }
-  
-  
-  .dropdown-options a {
-    display: block;
-    color: #000000;
-    padding: 5px;
-    text-decoration: none;
-    padding:20px 40px;
-  }
-  
-  .dropdown-options a:hover {
-    color: #0a0a23;
-    background-color: #ddd;
-    border-radius:5px;
-  }
 
-  .dropdown-username{
-    text-align: center;
-  }
-  .logout-button{
-    color: #000000;
-    padding: 5px;
-    text-decoration: none;
-    padding:20px 40px;
-    border:none;
-    background-color: white;
-    width:100%;
-    font-weight: 700;
-  }
-  .logout-button:hover{
-    color: #0a0a23;
-    background-color: #ddd;
-    border-radius:5px;
-    cursor: pointer;
-  }
+.dropdown-options {
+  display: none;
+  position: absolute;
+  overflow: auto;
+  background-color:#fff;
+  border-radius:5px;
+  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+  width: 25vh;
+  right: 0;
+}
 
-  .logout-form{
-    width: 100% !important;
-  }
+.dropdown:hover .dropdown-options {
+  display: block;
+}
+
+.dropdown-options a {
+  display: block;
+  color: #000000;
+  padding: 5px;
+  text-decoration: none;
+  padding:20px 40px;
+}
+
+.dropdown-options a:hover {
+  color: #0a0a23;
+  background-color: #ddd;
+  border-radius:5px;
+}
+
+.dropdown-username{
+  text-align: center;
+}
+
+.logout-button{
+  color: #000000;
+  padding: 5px;
+  text-decoration: none;
+  padding:20px 40px;
+  border:none;
+  background-color: white;
+  width:100%;
+  font-weight: 700;
+}
+
+.logout-button:hover{
+  color: #0a0a23;
+  background-color: #ddd;
+  border-radius:5px;
+  cursor: pointer;
+}
+
+.logout-form{
+  width: 100% !important;
+}
 
 .table-container{
   display: flex;
   justify-content: center;
 }
+
 .message_list {
   width: 80%;
 }
@@ -118,6 +118,7 @@ td {
 
 th {
   border-bottom: 2px solid #000000;
+  font-size: 3vh;
 }
 
 .no-asset-message{
