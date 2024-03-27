@@ -15,19 +15,12 @@ from django.views.generic import ListView, UpdateView
 
 from random import randint
 
-
-class HomeListView(ListView):
-    """Renders the home page, with a list of all messages."""
-    model = LogMessage
-    def get_context_data(self, **kwargs):
-        context = super(HomeListView, self).get_context_data(**kwargs)
-        return context
-
+    
 class AssetListView(ListView):
     model = Asset
-    def get_context_data(self, **kwargs):
-        context = super(AssetListView, self).get_context_data(**kwargs)
-        return context
+    def get_queryset(self):
+        # Only include Assets where 'registered_user' is the current user
+        return super().get_queryset().filter(registered_user=self.request.user)
     
 class AssetUpdateView(UpdateView):
     model = Asset
@@ -52,6 +45,7 @@ def hello_there(request, name):
     'date': datetime.now()
     }
  )
+
 
 def log_message(request):
     form = LogMessageForm(request.POST or None)

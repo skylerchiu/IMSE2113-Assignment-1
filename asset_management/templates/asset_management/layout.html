@@ -4,12 +4,25 @@
         <meta charset="utf-8"/>
         <title>{% block title %}{% endblock %}</title>
         {% load static %}
-        <link rel="stylesheet" type="text/css" href="{% static 'asset_management/site.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'asset_management/styles.css' %}"/>
+        <script src="https://kit.fontawesome.com/652834bf35.js" crossorigin="anonymous"></script>
     </head>
 <body>
     <div class="navbar">
         <a href="{% url 'home' %}" class="navbar-brand">Home</a>
-        <a href="{% url 'add-asset' %}" class="navbar-brand">Add Asset</a>
+        <a  action="{% url 'logout' %}" method="post" class="navbar-item">
+            {% csrf_token %}
+            <button type="submit">Log Out</button>
+        </a>
+        <div class="dropdown">
+            <i class="fa-solid fa-user"></i>
+            <div class="dropdown-options">
+              <a href="#">Change Password</a>
+              <a href="#">Edit</a>
+              <a href="#">Logout</a>
+            </div>
+          </div>
+
         {% comment %} <a href="{% url 'about' %}" class="navbar-item">About</a> {% endcomment %}
         {% comment %} <a href="{% url 'contact' %}" class="navbar-item">Contact</a> {% endcomment %}
     </div>
