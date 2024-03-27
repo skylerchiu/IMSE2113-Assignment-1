@@ -16,8 +16,8 @@ asset_list_view = login_required(views.AssetListView.as_view(
 
 urlpatterns = [
     path('', redirect_to_login),
-    path('password_change/', views.ChangePasswordView.as_view(), name='password_change'),
-    path('edit-profile', views.ProfileEditView.as_view(), name='edit-profile'),
+    path('password_change/', login_required(views.ChangePasswordView.as_view()), name='password_change'),
+    path('edit-profile', login_required(views.ProfileEditView.as_view()), name='edit-profile'),
     path("admin/", admin.site.urls),
     path("", include("django.contrib.auth.urls")), 
     path("home", asset_list_view, name="home"),
