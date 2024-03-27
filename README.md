@@ -1,5 +1,19 @@
 
-# User Guide
+# How to run locally:
+## Zipped folder: 
+1. Extract all the contents from the zipped folder
+2. Run `python manage.py runserver`
+
+
+## From git:
+1. Git clone the repository using https.
+2. Open the repository and open a new terminal
+3. Run `python -m venv .\Django-env` to create the virtual environment
+4. Select the virtial environment as the interpreter
+5. Pip install django
+6. Run `python manage.py runserver`
+
+
 
 
 # Development Notes
